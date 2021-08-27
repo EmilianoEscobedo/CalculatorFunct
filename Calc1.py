@@ -260,15 +260,3 @@ b0.grid(row=5, column=4, columnspan=1)
 name=Label(f2, width=10, height=2, bg='black', fg='white', text='LaingardoⓇ')
 name.grid(row=5, column=1, columnspan=2)
 root.mainloop()
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
