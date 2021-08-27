@@ -1,10 +1,11 @@
 import PySimpleGUI as sg
+from Button import *
 
 
 def interfazInicial():
     
     layout= [
-        [sg.InputText('0', font='Italic 15', size=(26,1), justification='right', key='screen')],
+        [sg.Text('0', font='Italic 15', size=(26,1), justification='right', key='screen', background_color=('#000'))],
         [sg.Button('7',font='Italic 20',size=(3,1),key='7'),
             sg.Button('8',font='Italic 20',size=(3,1),key='8'),
             sg.Button('9',font='Italic 20',size=(3,1),key='9'),
@@ -21,6 +22,7 @@ def interfazInicial():
               sg.Button('.',font='Italic 20',size=(3,1),key='.'),
                sg.Button('=',font='Italic 20',size=(3,1),key='='),
                sg.Button('+',font='Italic 20',size=(3,1),key='+')],
+               [sg.Button('Clear',font='Italic 20',size=(3,1),key='clear')]
                
     ]
     salir = [[sg.Button('Salir',font='Italic 20',size=(12,3),key='salir')]]
@@ -31,13 +33,31 @@ def principal():
     ancho = 900    
     ventana = sg.Window ('',interfazInicial(), size = (ancho,alto),element_justification='center')
     ventana.Finalize()
-
+    cad= ''
+    firstOperator=''
+    secondOperator=''
+    
     while True:
         event, value = ventana.read()
         if (event == None or event == 'salir') :
             break
-        if (event=='1'):
-            ventana ['screen'].Update('1')
+        if (event!='salir'):
+            try:
+                if(int(event) or event == '0'):
+                    cad= buttonNumber(event,cad)
+                    firstOperator=int(cad)
+                    ventana ['screen'].Update(firstOperator)     
+            except:
+                print('operation') 
+            #cad= buttonNumber(event,cad)
+            #ventana ['screen'].Update(cad)
+        if (event=='+'):
+            n1=cad
+            cad=''
+            ventana ['screen'].Update(cad+n1)
+        if (event=='clear'):
+            cad= ''
+            ventana['screen'].Update(0)
         
     ventana.Close()
 principal()
