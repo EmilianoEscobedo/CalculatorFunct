@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 from Button import *
 
 
-def interfazInicial():
+def InitialInterface():
     
     layout= [
         [sg.Text('0', font='Italic 15', size=(26,1), justification='right', key='screen', background_color=('#000'))],
@@ -25,28 +25,28 @@ def interfazInicial():
                [sg.Button('Clear',font='Italic 20',size=(3,1),key='clear')]
                
     ]
-    salir = [[sg.Button('Salir',font='Italic 20',size=(12,3),key='salir')]]
-    return layout + salir
+    exit = [[sg.Button('Exit',font='Italic 20',size=(12,3),key='exit')]]
+    return layout + exit
 
 def principal():
-    alto = 500
-    ancho = 900    
-    ventana = sg.Window ('',interfazInicial(), size = (ancho,alto),element_justification='center')
-    ventana.Finalize()
+    hight = 500
+    width = 900    
+    body = sg.Window ('',InitialInterface(), size = (width,hight),element_justification='center')
+    body.Finalize()
     cad= ''
     firstOperator=''
     secondOperator=''
     
     while True:
-        event, value = ventana.read()
-        if (event == None or event == 'salir') :
+        event, value = body.read()
+        if (event == None or event == 'exit') :
             break
-        if (event!='salir'):
+        if (event!='exit'):
             try:
                 if(int(event) or event == '0'):
                     cad= buttonNumber(event,cad)
                     firstOperator=int(cad)
-                    ventana ['screen'].Update(firstOperator)     
+                    body ['screen'].Update(firstOperator)     
             except:
                 print('operation') 
             #cad= buttonNumber(event,cad)
@@ -54,10 +54,10 @@ def principal():
         if (event=='+'):
             n1=cad
             cad=''
-            ventana ['screen'].Update(cad+n1)
+            body ['screen'].Update(cad+n1)
         if (event=='clear'):
             cad= ''
-            ventana['screen'].Update(0)
+            body['screen'].Update(0)
         
-    ventana.Close()
+    body.Close()
 principal()
