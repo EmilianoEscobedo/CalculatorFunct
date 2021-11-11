@@ -31,8 +31,7 @@ def principal():
     while True:
         event, values = body.read()
         
-    #Buttons event
-        
+    #Buttons event        
         if (event == None) :
             break
         elif (event=='clear'):
@@ -44,13 +43,18 @@ def principal():
         elif (event in range(0,10) or event in operators):
             equal+=str(event)
             body['input'].Update(equal)
-        elif event in specialOperators:
+    
+    #Buttons event in special cases
+        elif event in specialOperators:                                 
             if '√' in event :
-                equal=sqrt(float(equal))
+                equal=str(sqrt(float(equal)))
                 body['input'].Update(equal)
             if 'x!' in event :
-                equal=factorial(float(equal))
-                body['input'].Update(equal)
+                if  int(equal)>3200:
+                    body ['input'].Update('Overflow') 
+                else:
+                    equal=str(factorial(float(equal)))
+                    body['input'].Update(equal)
             if 'xⁿ' in event :
                 equal+='**'
                 body['input'].Update(equal)
@@ -61,6 +65,8 @@ def principal():
                 else:
                     equal=('-'+equal)
                     body['input'].Update(equal)
+        
+    #Math core
         elif (event == '=' ):
             try:
                 body ['input'].Update(equal)
