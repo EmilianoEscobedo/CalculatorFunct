@@ -1,5 +1,4 @@
 # Calculator-v2
-<<<<<<< HEAD
 V2.0 with modularization and class
 =======
 The V2.0 of the tiny calculator system that was created earlier.
