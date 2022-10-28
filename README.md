@@ -1,6 +1,6 @@
 # Calculator Functions Oriented
 <br>
-A sample calculator system builded with functions. Written in python and PySimpleGui library as GUI. <br>
+A simple calculator system builded with functions. Written in python and PySimpleGui library as GUI. <br>
 I use it daily in my linux distro as my main caiculator :)
 
 <br><br>
