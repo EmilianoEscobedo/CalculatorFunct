@@ -5,9 +5,10 @@ I use it daily in my linux distro as my main caiculator :)
 
 <br><br>
 
-<p align="center">
+<div align="center">
   <img src="https://i.ibb.co/wzXL8Fw/calc.png" alt="Calculator" style="width:50%"/>
-</p>
+  <p>Main interface</p>
+</div>
 
 ## Features
 
