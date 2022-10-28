@@ -1,7 +1,24 @@
-# Calculator-v2
+# Calculator Functions Oriented
+<br>
+A sample calculator system builded with functions. Written in python and PySimpleGui library as GUI. <br>
+I use it daily in my linux distro as my main caiculator :)
 
-=======
-The V2.0 of the tiny calculator system that was created earlier.
-This version has better implementation of code, new features and a most usefull and simple GUI.
-This calculator system along with other functionalities is included in its own package in the AUR to be used in arch linux distro.
+<br><br>
+
+<p align="center">
+  <img src="https://i.ibb.co/wzXL8Fw/calc.png" alt="Calculator" style="width:50%"/>
+</p>
+
+## Features
+
+- Add
+- Substration
+- Product
+- Division
+- positive/negative
+- factorial
+- exponent
+- sq root
+
+
 
